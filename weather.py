@@ -1,5 +1,6 @@
 import time
 import requests
+import config
 
 # your location (rounding to 1 decimal is plenty for weather, and keeps your exact address private)
 

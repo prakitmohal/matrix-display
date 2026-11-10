@@ -2,8 +2,6 @@ import time
 import requests
 
 # your location (rounding to 1 decimal is plenty for weather, and keeps your exact address private)
-LATITUDE = 
-LONGITUDE = 
 
 CACHE_SECONDS = 600     # reuse the last answer for 10 minutes
 cache = {"data": None, "time": 0}
@@ -64,8 +62,8 @@ def get_weather():
         reply = requests.get(
             "https://api.open-meteo.com/v1/forecast",
             params={
-                "latitude": LATITUDE,
-                "longitude": LONGITUDE,
+                "latitude": config.LATITUDE,
+                "longitude": config.LONGITUDE,
                 "current": "temperature_2m,weather_code,is_day",
                 "daily": "temperature_2m_max,temperature_2m_min",
                 "temperature_unit": "fahrenheit",
